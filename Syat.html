@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show Image Page</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      height: 100vh;
+      background: linear-gradient(135deg, #1f4037, #99f2c8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 15px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <h2>Welcome orang tampan</h2>
+    <p>pencet</p>
+    <button onclick="goToImage()">Open Image</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <h2>tampan banget</h2>
+    <img src="https://i.supaimg.com/87eaa422-e748-415e-8b2a-a0ebd94a1bd8.jpg" alt="Nature Image">
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <script>
+    function goToImage() {
+      document.getElementById("page1").classList.remove("active");
+      document.getElementById("page2").classList.add("active");
+    }
+
+    function goBack() {
+      document.getElementById("page2").classList.remove("active");
+      document.getElementById("page1").classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
